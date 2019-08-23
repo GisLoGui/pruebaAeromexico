@@ -1,0 +1,57 @@
+﻿
+
+<div class="login-page">
+  <div class="login-spacer"></div>
+  <div class="login-container">
+    <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+      <i id="lock-icon" class="material-icons">Aeroméxico</i>
+    </div>
+    <h2 class="card-heading">
+      Formulario
+    </h2>
+    <form [formGroup]="formularioForm" (ngSubmit)="onSubmit()">
+    <mat-form-field >
+              <input matInput placeholder="Nombre de pasajero" type="text" formControlName="nombrePasajero" [ngClass]="{ 'is-invalid': submitted && namePasajero.invalid }" >
+              <div>
+                <mdb-error *ngIf="namePasajero.invalid && (namePasajero.dirty || namePasajero.touched)">Solo letras, minimo 3</mdb-error>
+            </div> 
+    </mat-form-field>  
+          
+    <mat-form-field>
+      <input matInput placeholder="Apellido" type="text" formControlName="apellidoPasajero" [ngClass]="{ 'is-invalid': submitted && lastNAmePasajero.invalid }" >
+      <div>
+        <mdb-error *ngIf="lastNAmePasajero.invalid && (lastNAmePasajero.dirty || lastNAmePasajero.touched)">Solo letras, minimo 3</mdb-error>
+    </div>   
+    </mat-form-field>
+
+    <mat-form-field >
+      <input matInput placeholder="Origen" type="text" formControlName="origen" [ngClass]="{ 'is-invalid': submitted && origin.invalid }" >
+      <div>
+        <mdb-error *ngIf="origin.invalid && (origin.dirty || origin.touched)">Solo letras, minimo 3</mdb-error>
+    </div> 
+</mat-form-field>  
+  
+<mat-form-field>
+<input matInput placeholder="Destino" type="text" formControlName="destino" [ngClass]="{ 'is-invalid': submitted && destination.invalid }" >
+<div>
+<mdb-error *ngIf="destination.invalid && (destination.dirty || destination.touched)">Solo letras, minimo 3</mdb-error>
+</div>   
+</mat-form-field>
+
+
+      <div class="buttons">
+              <div class="login">
+                <button  mat-raised-button color="primary" routerLink="/">Envia tus datos</button>
+              </div>     
+            </div>
+
+            <div class="buttons">
+              <div class="login">
+                <button  mat-raised-button color="primary" routerLink="/home">Cancelar</button>
+              </div>     
+            </div>
+          </form>
+          </div>
+        </div>
+        
+

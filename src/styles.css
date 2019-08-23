@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+	background-color: rgba(0, 0, 0, 0.039);
+	background: linear-gradient(-25deg, rgba(15, 17, 161, 0.753), rgba(20, 4, 81, 0));
+	overflow-x: hidden;
+	margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+h3{
+  color: black;
+}
+.mat-toolbar.mat-primary {
+	background-color: #252850!important;
+  color: #fff;
+}
+.companyName{
+    font-size: 150%;
+}
+
+.mat-toolbar{
+  height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+
+.mat-sidenav-container{
+	background: linear-gradient(-25deg, rgba(15, 17, 161, 0.753), rgba(20, 4, 81, 0));
+  min-height: 93vh !important;
+}
+
+a{
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+}
+
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
+  }

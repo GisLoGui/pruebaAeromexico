@@ -1,0 +1,44 @@
+﻿
+
+<div class="login-page">
+    <div class="login-spacer"></div>
+    <div class="login-container">
+      <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+        <i id="lock-icon" class="material-icons">Aeroméxico</i>
+      </div>
+      <h2 class="card-heading">
+        Login
+      </h2>
+      <div *ngIf="mensaje" [ngClass]="{ 'alert': mensaje, 'alert-success': mensaje.type === 'success', 'alert-danger': mensaje.type === 'error' }">{{mensaje.text}}</div>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field >
+          <input matInput placeholder="Email" formControlName="email" type='text' [ngClass]="{ 'is-invalid': submitted && input.invalid  }">
+          <div>
+              <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Email invalido</mdb-error>
+          </div> 
+        </mat-form-field>  
+   
+        <mat-form-field>
+          <input matInput type='password' placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && pattern.invalid }" >
+          <div>
+              <mdb-error *ngIf="pattern.invalid && (pattern.dirty || pattern.touched)">Password mínima de 6 caracteres, máxima de 14 caracteres</mdb-error>
+          </div> 
+        </mat-form-field>
+      
+      <div class="buttons">
+        <div class="login">
+          <button  mat-raised-button color="primary">Login</button>
+        </div>     
+      </div>
+
+      <div class="buttons">
+        <div class="login">
+          <button  mat-raised-button color="primary" routerLink="/register">Registrate</button>
+        </div>     
+      </div>
+    </form>
+    </div>
+  </div>
+  
+
+
